@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 375 106">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: rgba(255,255,255,0.17);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.972" y1="0.951" x2="0.023" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#81c7f5"/>
+      <stop offset="1" stop-color="#3867d5"/>
+    </linearGradient>
+  </defs>
+  <g id="Symbol_3_1" data-name="Symbol 3 – 1">
+    <rect id="Rectangle_3" data-name="Rectangle 3" class="cls-1" width="375" height="106"/>
+    <circle id="Ellipse_11" data-name="Ellipse 11" class="cls-2" cx="105.5" cy="105.5" r="105.5" transform="translate(-80 -105)"/>
+    <circle id="Ellipse_12" data-name="Ellipse 12" class="cls-2" cx="46.5" cy="46.5" r="46.5" transform="translate(299 -18)"/>
+  </g>
+</svg>

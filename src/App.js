@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import TodoItem from "./components/TodoItem";
+import NoTask from "./components/NoTask";
+import Header from "./components/Header";
+import { ReactComponent as AddTaskIcon } from "./assets/Button.svg";
+import "./App.css";
+import styled from "styled-components";
 
 function App() {
+  const [todos, setTodos] = useState([
+    {
+      title: "",
+      isCompleted: false
+    }
+  ]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Container>
+        <Header></Header>
+        <NoTask></NoTask>
+        <AddTaskIcon id="addtask"></AddTaskIcon>
+        {todos.map((todo, index) => (
+          <TodoItem key={index} index={index} todo={todo}></TodoItem>
+        ))}
+      </Container>
     </div>
   );
 }
+
+const Container = styled.div`
+  #addtask {
+    width: 100px;
+    height: 100px;
+    display: block;
+    float: right;
+  }
+`;
 
 export default App;
