@@ -20,3 +20,46 @@
 .App-link {
   color: #09d3ac;
 }
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background-color: #2120203d;
+  opacity: 0.5;
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+#close-button {
+  width: 80px;
+  height: 80px;
+  float: right;
+  margin-top: -25px;
+}
+
+.modal {
+  z-index: 100;
+  background: white;
+  position: relative;
+  margin: 6.9rem auto;
+  max-width: 375px;
+  height: 550px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: flex-end;
+}

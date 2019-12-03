@@ -5,6 +5,8 @@ import Header from "./components/Header";
 import { ReactComponent as AddTaskIcon } from "./assets/Button.svg";
 import "./App.css";
 import styled from "styled-components";
+import ToggleModal from "./components/ToggleModal";
+import Modal from "./components/Modal";
 
 function App() {
   const [todos, setTodos] = useState([
@@ -13,13 +15,16 @@ function App() {
       isCompleted: false
     }
   ]);
+  const { isShowing, toggle } = ToggleModal();
 
   return (
     <div className="App">
       <Container>
         <Header></Header>
         <NoTask></NoTask>
-        <AddTaskIcon id="addtask"></AddTaskIcon>
+        <Modal isShowing={isShowing} hide={toggle} />
+        <AddTaskIcon onClick={toggle} id="addtask"></AddTaskIcon>
+
         {todos.map((todo, index) => (
           <TodoItem key={index} index={index} todo={todo}></TodoItem>
         ))}
@@ -30,8 +35,8 @@ function App() {
 
 const Container = styled.div`
   #addtask {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     display: block;
     float: right;
   }
