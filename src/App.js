@@ -1,33 +1,52 @@
 import React, { useState } from "react";
-import TodoItem from "./components/TodoItem";
 import NoTask from "./components/NoTask";
 import Header from "./components/Header";
+import TodoItem from "./components/TodoItem";
 import { ReactComponent as AddTaskIcon } from "./assets/Button.svg";
 import "./App.css";
 import styled from "styled-components";
-import ToggleModal from "./components/ToggleModal";
-import Modal from "./components/Modal";
+import { ReactComponent as ButtonClose } from "./assets/ButtonClose.svg";
+import AddTask from "./components/AddTask";
 
 function App() {
+  const [openModal, setOpenModal] = useState(false);
   const [todos, setTodos] = useState([
-    {
-      title: "",
-      isCompleted: false
-    }
+    { task: "AAAAAA" },
+    { task: "BBBBB" },
+    { task: "CCCCCC" }
   ]);
-  const { isShowing, toggle } = ToggleModal();
+
+  const addTodo = task => {
+    const newTodos = [...todos, { task }];
+    setTodos(newTodos);
+    setOpenModal(false);
+  };
 
   return (
     <div className="App">
       <Container>
         <Header></Header>
         <NoTask></NoTask>
-        <Modal isShowing={isShowing} hide={toggle} />
-        <AddTaskIcon onClick={toggle} id="addtask"></AddTaskIcon>
-
         {todos.map((todo, index) => (
-          <TodoItem key={index} index={index} todo={todo}></TodoItem>
+          <TodoItem key={index} index={index} todo={todo} />
         ))}
+        <AddTaskIcon
+          onClick={() => setOpenModal(true)}
+          id="addtask"
+        ></AddTaskIcon>
+        {openModal && (
+          <div className="modal-wrapper">
+            <div className="modal">
+              <AddTask addTodo={addTodo}></AddTask>
+
+              <ButtonClose
+                type="button"
+                onClick={() => setOpenModal(false)}
+                id="close-button"
+              ></ButtonClose>
+            </div>
+          </div>
+        )}
       </Container>
     </div>
   );

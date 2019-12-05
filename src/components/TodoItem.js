@@ -3,7 +3,9 @@ import React from "react";
 function TodoItem({ todo, index }) {
   return (
     <div>
-      <div className="todo">{todo.title}</div>
+      <div className="todo" id={index}>
+        {todo.task}
+      </div>
     </div>
   );
 }

@@ -59,3 +59,11 @@
   max-width: 375px;
   height: 550px;
 }
+
+.todo {
+  background: #fff;
+  padding: 3px 10px;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+}
