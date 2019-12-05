@@ -18,7 +18,7 @@ function Header() {
 
 const Container = styled.div`
   background-image: url(${Background});
-  width: 375px;
+  width: 100%;
   height: 106px;
   background-position: center;
   background-size: cover;

@@ -1,5 +1,5 @@
 .App {
-  width: 375px;
+  max-width: 375px;
   height: 700px;
   margin: 0 auto;
   border-radius: 5px;
@@ -41,6 +41,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   outline: 0;
+  text-align: center;
 }
 
 #close-button {
@@ -57,9 +58,4 @@
   margin: 6.9rem auto;
   max-width: 375px;
   height: 550px;
-}
-
-.modal-header {
-  display: flex;
-  justify-content: flex-end;
 }
