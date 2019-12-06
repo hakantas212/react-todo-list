@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { ReactComponent as AddTaskIcon } from "../assets/Button.svg";
 
 function AddTask({ addTodo }) {
   const [value, setValue] = useState("");
@@ -21,7 +20,18 @@ function AddTask({ addTodo }) {
           onChange={e => setValue(e.target.value)}
         />
       </form>
-      <AddTaskIcon onClick={handleSubmit}></AddTaskIcon>
+      <div className="table">
+        <ul className="color-list">
+          <li>Personal</li>
+          <li>Work</li>
+          <li>Meeting</li>
+          <li>Study</li>
+          <li>Shopping</li>
+        </ul>
+      </div>
+      <button className="addtask-button" onClick={handleSubmit}>
+        Add task
+      </button>
     </div>
   );
 }
