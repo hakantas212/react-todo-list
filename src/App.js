@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NoTask from "./components/NoTask";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
@@ -10,22 +10,62 @@ import AddTask from "./components/AddTask";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
-  const [todos, setTodos] = useState([]);
+  const [todosLeft, setTodosleft] = useState(0);
+  const [todos, setTodos] = useState([
+    {
+      task: "AAAAA",
+      completed: false
+    },
+    {
+      task: "BBBBB",
+      completed: false
+    },
+    {
+      task: "CCCCC",
+      completed: false
+    },
+
+    {
+      task: "DDDDD",
+      completed: false
+    }
+  ]);
+
+  useEffect(() => {
+    setTodosleft(todos.filter(task => !task.completed).length);
+  }, [todos]);
 
   const addTodo = task => {
-    const newTodos = [...todos, { task }];
+    const newTodos = [...todos, { task, completed: false }];
     setTodos(newTodos);
     setOpenModal(false);
   };
 
+  const removeTodo = index => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
+  const completeTodo = index => {
+    const newTodos = [...todos];
+    newTodos[index].completed = true;
+    setTodos(newTodos);
+  };
+
   return (
     <div className="App">
-      <Container>
+      <Container todosLeft={todosLeft}>
         <Header></Header>
-
         <NoTask></NoTask>
         {todos.map((todo, index) => (
-          <TodoItem key={index} index={index} todo={todo} />
+          <TodoItem
+            key={index}
+            index={index}
+            todo={todo}
+            completeTodo={completeTodo}
+            removeTodo={removeTodo}
+          ></TodoItem>
         ))}
 
         {openModal && (

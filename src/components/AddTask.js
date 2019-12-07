@@ -9,6 +9,7 @@ function AddTask({ addTodo }) {
     addTodo(value);
     setValue("");
   };
+
   return (
     <div>
       <p>Add new task</p>
