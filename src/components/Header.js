@@ -2,13 +2,16 @@ import React from "react";
 import styled from "styled-components";
 import Background from "../assets/background.svg";
 
-function Header() {
+function Header({ todos }) {
   return (
     <Container>
       <AppHeader>
         <Greeting>
           <h4>Hello Brenda!</h4>
-          <span>Today you have 9 tasks</span>
+
+          <span>
+            Today you have <strong>{todos.length}</strong> tasks
+          </span>
         </Greeting>
         <img alt="profile-pic" src={"./Photo.png"} />
       </AppHeader>

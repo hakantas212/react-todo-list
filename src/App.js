@@ -6,11 +6,11 @@ import { ReactComponent as AddTaskIcon } from "./assets/Button.svg";
 import "./App.css";
 import styled from "styled-components";
 import { ReactComponent as ButtonClose } from "./assets/ButtonClose.svg";
-import AddTask from "./components/AddTask";
+import AddTask from "./components/AddTodo";
 
 function App() {
   const [openModal, setOpenModal] = useState(false);
-  const [todosLeft, setTodosleft] = useState(0);
+  const [todosLeft, setTodosleft] = useState();
   const [todos, setTodos] = useState([
     {
       task: "AAAAA",
@@ -52,21 +52,25 @@ function App() {
     newTodos[index].completed = true;
     setTodos(newTodos);
   };
-
   return (
     <div className="App">
       <Container todosLeft={todosLeft}>
-        <Header></Header>
-        <NoTask></NoTask>
-        {todos.map((todo, index) => (
-          <TodoItem
-            key={index}
-            index={index}
-            todo={todo}
-            completeTodo={completeTodo}
-            removeTodo={removeTodo}
-          ></TodoItem>
-        ))}
+        <Header todos={todos}></Header>
+        {(() => {
+          if (todos.length > 0) {
+            return todos.map((todo, index) => (
+              <TodoItem
+                key={index}
+                index={index}
+                todo={todo}
+                completeTodo={completeTodo}
+                removeTodo={removeTodo}
+              ></TodoItem>
+            ));
+          } else {
+            return <NoTask />;
+          }
+        })()}
 
         {openModal && (
           <div className="modal-wrapper">

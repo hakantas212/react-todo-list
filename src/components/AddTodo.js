@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 function AddTask({ addTodo }) {
   const [value, setValue] = useState("");
+  const [color, setColor] = useState();
 
   const handleSubmit = e => {
     e.preventDefault();
