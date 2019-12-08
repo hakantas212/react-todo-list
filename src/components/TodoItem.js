@@ -8,6 +8,7 @@ function TodoItem({ todo, index, removeTodo, completeTodo }) {
           <button value={todo.index} onClick={() => completeTodo(index)}>
             COMPLETE
           </button>
+
           {todo.task}
         </div>
         <button value={todo.index} onClick={() => removeTodo(index)}>

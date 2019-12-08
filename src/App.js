@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { ReactComponent as ButtonClose } from "./assets/ButtonClose.svg";
 import AddTask from "./components/AddTodo";
 
-function App() {
+function App({ category }) {
   const [openModal, setOpenModal] = useState(false);
   const [todosLeft, setTodosleft] = useState();
   const [todos, setTodos] = useState([
@@ -36,7 +36,7 @@ function App() {
   }, [todos]);
 
   const addTodo = task => {
-    const newTodos = [...todos, { task, completed: false }];
+    const newTodos = [...todos, { task, completed: false, category }];
     setTodos(newTodos);
     setOpenModal(false);
   };
