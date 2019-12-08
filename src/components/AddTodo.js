@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 
 function AddTask({ addTodo }) {
-  const [value, setValue] = useState("");
-  const [category, setCategory] = useState([{ value: "" }]);
+  const [value, setValue] = useState({
+    v: ""
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
     if (!value) return;
-    addTodo(value, category);
+    addTodo(value);
     setValue("");
-    setCategory("");
   };
 
-  const addCategory = e => {
-    setCategory(e.target.value);
+  const handleCategory = e => {
+    e.preventDefault();
+    setValue({ ...value, category: e.target.value });
   };
 
   return (
@@ -23,22 +24,38 @@ function AddTask({ addTodo }) {
         <input
           type="text"
           className="input"
-          value={value}
-          onChange={e => setValue(e.target.value)}
+          value={value.v}
+          onChange={e => setValue({ ...value, v: e.target.value })}
         />
       </form>
       <div className="table">
-        <button
-          style={{ backgroundColor: "red" }}
-          value="blue"
-          onChange={addCategory}
-          type="button"
-        >
-          WORK
-        </button>
-        <button value="green" onChange={addCategory} type="button">
-          FREE
-        </button>
+        <ul className="color-list">
+          <li>
+            <button value="#FFD506" onClick={handleCategory}>
+              Personal
+            </button>
+          </li>
+          <li>
+            <button value="#5DE61A" onClick={handleCategory}>
+              Work
+            </button>
+          </li>
+          <li>
+            <button value="#D10263" onClick={handleCategory}>
+              Meeting
+            </button>
+          </li>
+          <li>
+            <button value="#3044F2" onClick={handleCategory}>
+              Study
+            </button>
+          </li>
+          <li>
+            <button value="#F29130" onClick={handleCategory}>
+              Shopping
+            </button>
+          </li>
+        </ul>
       </div>
       <button className="addtask-button" onClick={handleSubmit}>
         Add task

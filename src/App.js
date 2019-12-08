@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import NoTask from "./components/NoTask";
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
@@ -8,35 +8,16 @@ import styled from "styled-components";
 import { ReactComponent as ButtonClose } from "./assets/ButtonClose.svg";
 import AddTask from "./components/AddTodo";
 
-function App({ category }) {
+function App() {
   const [openModal, setOpenModal] = useState(false);
-  const [todosLeft, setTodosleft] = useState();
-  const [todos, setTodos] = useState([
-    {
-      task: "AAAAA",
-      completed: false
-    },
-    {
-      task: "BBBBB",
-      completed: false
-    },
-    {
-      task: "CCCCC",
-      completed: false
-    },
-
-    {
-      task: "DDDDD",
-      completed: false
-    }
-  ]);
-
-  useEffect(() => {
-    setTodosleft(todos.filter(task => !task.completed).length);
-  }, [todos]);
+  const [todos, setTodos] = useState("");
 
   const addTodo = task => {
-    const newTodos = [...todos, { task, completed: false, category }];
+    const newTodos = [
+      ...todos,
+      { task: task.v, completed: false, category: task.category }
+    ];
+    if (!task.v) return;
     setTodos(newTodos);
     setOpenModal(false);
   };
@@ -54,7 +35,7 @@ function App({ category }) {
   };
   return (
     <div className="App">
-      <Container todosLeft={todosLeft}>
+      <Container>
         <Header todos={todos}></Header>
         {(() => {
           if (todos.length > 0) {

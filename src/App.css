@@ -124,11 +124,12 @@
 }
 
 ul li::before {
-  color: #00f7ff;
-  content: "\2022";
   display: inline-block;
   font-size: 1em;
   left: -1.1225em;
   position: absolute;
   top: 0em;
+}
+::-webkit-scrollbar {
+  display: none;
 }
