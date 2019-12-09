@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80">
   <defs>
     <style>
-      .cls-10 {
+      .cls-1 {
         fill: url(#linear-gradient);
       }
 
@@ -11,7 +11,7 @@
         stroke-width: 3px;
       }
 
-      .cls-33 {
+      .cls-3 {
         filter: url(#Ellipse_8);
       }
     </style>
@@ -29,7 +29,7 @@
   </defs>
   <g id="Button" transform="translate(13.5 6.5)">
     <g class="cls-3" transform="matrix(1, 0, 0, 1, -13.5, -6.5)">
-      <circle id="Ellipse_8-2" data-name="Ellipse 8" class="cls-10" cx="26.5" cy="26.5" r="26.5" transform="translate(13.5 6.5)"/>
+      <circle id="Ellipse_8-2" data-name="Ellipse 8" class="cls-1" cx="26.5" cy="26.5" r="26.5" transform="translate(13.5 6.5)"/>
     </g>
     <g id="add" transform="translate(14.309 14.309)">
       <g id="Group_15" data-name="Group 15" transform="translate(11.404)">

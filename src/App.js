@@ -56,11 +56,14 @@ function App() {
         {openModal && (
           <div className="modal-wrapper">
             <div className="modal">
-              <ButtonClose
-                type="button"
-                onClick={() => setOpenModal(false)}
-                id="close-button"
-              ></ButtonClose>
+              <div className="modal-header">
+                <ButtonClose
+                  type="button"
+                  onClick={() => setOpenModal(false)}
+                  id="close-button"
+                ></ButtonClose>
+              </div>
+              <p>Add new task</p>
               <AddTask addTodo={addTodo}></AddTask>
             </div>
           </div>
@@ -80,7 +83,6 @@ const Container = styled.div`
     height: 80px;
     display: block;
     float: right;
-    box-shadow: 0px 7px 9px #f456c378;
   }
 `;
 

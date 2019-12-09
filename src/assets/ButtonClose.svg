@@ -1,1 +1,48 @@
-<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21.3 21.39"><defs><style>.cls-1{fill:#f70606;stroke:#f90000;stroke-width:3px;}</style></defs><title>ButtonClose</title><g id="Button"><g id="add"><g id="Group_15" data-name="Group 15"><g id="Group_14" data-name="Group 14"><path id="Path_77" data-name="Path 77" class="cls-1" d="M35.41,17.81a1,1,0,0,0-1.4,0L18,34.11a1,1,0,1,0,1.2,1.6,1,1,0,0,0,.2-.2l16-16.2A1.09,1.09,0,0,0,35.41,17.81Z" transform="translate(-16.01 -16.02)"/></g></g><g id="Group_17" data-name="Group 17"><g id="Group_16" data-name="Group 16"><path id="Path_78" data-name="Path 78" class="cls-1" d="M35.61,34,19.31,18a1,1,0,1,0-1.6,1.2,1,1,0,0,0,.2.2l16.3,16a1,1,0,0,0,1.4-.2A1,1,0,0,0,35.61,34Z" transform="translate(-16.01 -16.02)"/></g></g></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 80 80">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        fill: #fff;
+        stroke: #fff;
+        stroke-width: 3px;
+      }
+
+      .cls-3 {
+        filter: url(#Ellipse_8);
+      }
+    </style>
+    
+    <linearGradient id="linear-gradient" x1="0.23" y1="0.126" x2="0.834" y2="0.93" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#f857c3"/>
+      <stop offset="1" stop-color="#e0139c"/>
+    </linearGradient>
+    <filter id="Ellipse_8" x="0" y="0" width="80" height="80" filterUnits="userSpaceOnUse">
+      <feOffset dy="7" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="4.5" result="blur"/>
+      <feFlood flood-color="#f456c3" flood-opacity="0.471"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Button" transform="translate(13.5 6.5)">
+    <g class="cls-3" transform="matrix(1, 0, 0, 1, -13.5, -6.5)">
+      <circle id="Ellipse_8-2" data-name="Ellipse 8" class="cls-1" cx="26.5" cy="26.5" r="26.5" transform="translate(13.5 6.5)"/>
+    </g>
+    <g id="add" transform="translate(14.309 14.309)">
+      <g id="Group_15" data-name="Group 15" transform="translate(11.404)">
+        <g id="Group_14" data-name="Group 14">
+          <path id="Path_77" data-name="Path 77" class="cls-2" d="M236.32,0a1,1,0,0,0-1,1V23.81a1,1,0,1,0,2,0V1A1,1,0,0,0,236.32,0Z" transform="translate(-235.318 0)"/>
+        </g>
+      </g>
+      <g id="Group_17" data-name="Group 17" transform="translate(0 11.404)">
+        <g id="Group_16" data-name="Group 16">
+          <path id="Path_78" data-name="Path 78" class="cls-2" d="M23.81,235.318H1a1,1,0,1,0,0,2H23.81a1,1,0,1,0,0-2Z" transform="translate(0 -235.318)"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
